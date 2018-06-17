@@ -2,7 +2,8 @@ var express =  require('express');
 var cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors()); // cross origin requests; ensure we can call Heroku-based API from our UI
+                 // hosted on different URL; CORS must be enabled to make Ajax calls to different domain
 
 app.set('port', (process.env.PORT || 5000));
 
